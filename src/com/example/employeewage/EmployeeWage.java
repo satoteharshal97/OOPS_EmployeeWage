@@ -11,20 +11,20 @@ public class EmployeeWage {
     static void getFullOrPartTimeWage(){
         int empHours = 0;
         int empWage = 0;
-        double empChecker = (int)Math.floor(Math.random() * 10) % 3;
-
-        if(empChecker == IS_FULL_TIME) {
-            empHours = 8;
+        int empChecker = (int)Math.floor(Math.random() * 10) % 3;
+            switch(empChecker){
+                case IS_FULL_TIME:
+                    empHours = 8;
+                    break;
+                case IS_PART_TIME:
+                    empHours = 4;
+                    break;
+                default:
+                    empHours = 0;
+            }
+            empWage = empHours * EMP_WAGE_PER_HOUR;
+            System.out.println("Employee Wage: " + empWage);
         }
-        else if(empChecker == IS_PART_TIME){
-            empHours = 4;
-        }
-        else {
-            empHours = 0;
-        }
-        empWage = empHours * EMP_WAGE_PER_HOUR;
-        System.out.println("Employee Wage: " + empWage);
-    }
 }
 
 
